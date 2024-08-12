@@ -1,0 +1,311 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "DM Sans", sans-serif;
+}
+
+/* Header */
+.header {
+  font-weight: 800;
+  font-size: 16px;
+  color: #D41F30;
+  background-color: #000000;
+  padding: 15px 70px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Buttons */
+.btn {
+  background-color: #f52346;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  padding: 7px 10px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+/* Flashcard */
+.flashcard-list {
+  width: 100%;
+  height: 80vh;
+  padding: 0 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.flashcard {
+  width: 500px;
+  height: 300px;
+  margin: 20px;
+  perspective: 800px;
+}
+
+.flashcard .front, .flashcard .back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  transition: transform 0.4s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px; 
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+.flashcard .front {
+  background: #f8f8f8;
+  border: 1px solid #ccc;
+}
+
+.flashcard .back {
+  background: #f1f1f1;
+  transform: rotateY(180deg);
+}
+
+.flashcard.flipped .front {
+  transform: rotateY(180deg);
+}
+
+.flashcard.flipped .back {
+  transform: rotateY(0deg);
+}
+
+/* Navigation */
+.navigation {
+  margin-top: 20px;
+}
+
+.navigation button {
+  margin: 5px;
+}
+
+/* Admin Dashboard */
+.admin-dashboard {
+  width: 100%;
+  padding: 15px 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 80vh;
+}
+
+.admin-heading {
+  margin: 20px 0;
+}
+
+.inputs {
+  padding: 5px;
+  margin: 5px;
+  border-radius: 5px;  
+}
+
+.mini-admin {
+  width: inherit;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Table Container */
+.table-container {
+  max-width: 100%;
+  overflow-x: auto;
+  margin: 20px 0;
+}
+
+/* Table Styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 18px;
+  text-align: left;
+}
+
+thead th {
+  background-color: #F52346;
+  color: white;
+  padding: 12px 15px;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
+tbody td {
+  padding: 12px 15px;
+  font-size: 17px;
+  border-bottom: 1px solid #ddd;
+}
+
+tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+tbody tr.selected {
+  background-color: #D6EAF8;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 12px 15px;
+}
+
+/* Input Styles within the Table */
+.bigger-input {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Action Button Styles */
+.action-btn {
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-right: 5px;
+  transition: background-color 0.3s ease;
+}
+
+/* Specific button classes */
+.edit-btn {
+  background-color: #D41F30;
+  color: white;
+}
+
+.save-btn {
+  background-color: #2196F3;
+  color: white;
+}
+
+.cancel-btn {
+  background-color: #f44336;
+  color: white;
+}
+
+.delete-btn {
+  background-color: #f44336;
+  color: white;
+}
+
+/* Scrollbar Styles */
+.table-container::-webkit-scrollbar {
+  height: 6px;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 10px;
+}
+
+.table-container::-webkit-scrollbar-thumb:hover {
+  background-color: #b3b3b3;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .header {
+    padding: 15px 30px;
+  }
+
+  .flashcard-list {
+    padding: 0 20px;
+  }
+
+  .flashcard {
+    width: 90%;
+    height: auto;
+  }
+
+  .admin-dashboard {
+    padding: 15px 30px;
+  }
+
+  .table-container {
+    margin: 10px 0;
+  }
+
+  table {
+    font-size: 16px;
+  }
+
+  .action-btn {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 15px 10px;
+    font-size: 14px;
+  }
+
+  .flashcard-list {
+    padding: 0 10px;
+  }
+
+  .flashcard {
+    width: 100%;
+    height: auto;
+  }
+
+  .admin-dashboard {
+    padding: 15px 10px;
+  }
+
+  table {
+    font-size: 14px;
+  }
+
+  .action-btn {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    font-size: 12px;
+    padding: 10px;
+  }
+
+  .flashcard-list {
+    padding: 0 5px;
+  }
+
+  .flashcard {
+    width: 100%;
+    height: auto;
+  }
+
+  .admin-dashboard {
+    padding: 10px;
+  }
+
+  table {
+    font-size: 12px;
+  }
+
+  .action-btn {
+    font-size: 8px;
+  }
+}
